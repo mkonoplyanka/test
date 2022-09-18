@@ -18,7 +18,7 @@ class ValueObject
         return $this->red;
     }
 
-    private function setRed(int $red)
+    private function setRed($red)
     {
         if(($red > 255) || ($red < 0)){
             throw new Exception('message');
@@ -31,7 +31,7 @@ class ValueObject
         return $this->green;
     }
 
-    private function setGreen(int $green)
+    private function setGreen($green)
     {
         if(($green > 255) || ($green < 0)){
             throw new Exception('message');
@@ -44,7 +44,7 @@ class ValueObject
         return $this->blue;
     }
 
-    private function setBlue(int $blue)
+    private function setBlue($blue)
     {
         if(($blue > 255) || ($blue < 0)){
             throw new Exception('message');

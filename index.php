@@ -21,10 +21,10 @@ class ValueObject
     private function setRed($red)
     {
         if(!is_int($red)) {
-            throw Exception('it is\'nt integer');
+            throw new Exception('it is\'nt integer');
         }
         if(($red > 255) || ($red < 0)){
-            throw Exception('message');
+            throw new Exception('message');
         }
         $this->red = $red;
     }
@@ -37,10 +37,10 @@ class ValueObject
     private function setGreen($green)
     {
         if(!is_int($green)) {
-            throw Exception('it is\'nt integer');
+            throw new Exception('it is\'nt integer');
         }
         if(($green > 255) || ($green < 0)){
-            throw Exception('message');
+            throw new Exception('message');
         }
         $this->green = $green;
     }
@@ -53,10 +53,10 @@ class ValueObject
     private function setBlue($blue)
     {
         if(!is_int($blue)) {
-            throw Exception('it is\'nt integer');
+            throw new Exception('it is\'nt integer');
         }
         if(($blue > 255) || ($blue < 0)){
-            throw Exception('message');
+            throw new Exception('message');
         }
         $this->blue = $blue;
     }
@@ -84,7 +84,7 @@ class ValueObject
     }
 }
 
-$obj1 = new ValueObject(100,30,50);
+$obj1 = new ValueObject(-1,30,50);
 $obj2 = new ValueObject(100,30,100);
 echo 'Equals ';
 var_dump($obj1->equals($obj1, $obj2));

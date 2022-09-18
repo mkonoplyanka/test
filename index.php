@@ -69,12 +69,12 @@ class ValueObject
         return false;
     }
 
-    public static function random($red, $green, $blue)
+    public static function random()
     {
-        return new ValueObject($red, $green, $blue);
+        return new ValueObject(rand(0, 255), rand(0, 255), rand(0,255));
     }
 }
 
 $obj1 = new ValueObject(100,30,50);
 $obj2 = new ValueObject(100,30,51);
-var_dump($obj1::random(rand(0, 255), rand(0, 255), rand(0,255)));
+var_dump($obj1::random());

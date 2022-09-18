@@ -60,7 +60,7 @@ class ValueObject
         return false;
     }
 
-    public static function random(): object
+    public static function random(): ValueObject
     {
         return new ValueObject(rand(0, 255), rand(0, 255), rand(0,255));
     }

@@ -6,7 +6,7 @@ class ValueObject
     private $green;
     private $blue;
 
-    public function __construct($red, $green, $blue)
+    public function __construct(int $red, int $green, int $blue)
     {
         $this->setRed($red);
         $this->setGreen($green);
@@ -18,11 +18,8 @@ class ValueObject
         return $this->red;
     }
 
-    private function setRed($red)
+    private function setRed(int $red)
     {
-        if(!is_int($red)) {
-            throw new Exception('it is\'nt integer');
-        }
         if(($red > 255) || ($red < 0)){
             throw new Exception('message');
         }
@@ -34,11 +31,8 @@ class ValueObject
         return $this->green;
     }
 
-    private function setGreen($green)
+    private function setGreen(int $green)
     {
-        if(!is_int($green)) {
-            throw new Exception('it is\'nt integer');
-        }
         if(($green > 255) || ($green < 0)){
             throw new Exception('message');
         }
@@ -50,18 +44,15 @@ class ValueObject
         return $this->blue;
     }
 
-    private function setBlue($blue)
+    private function setBlue(int $blue)
     {
-        if(!is_int($blue)) {
-            throw new Exception('it is\'nt integer');
-        }
         if(($blue > 255) || ($blue < 0)){
             throw new Exception('message');
         }
         $this->blue = $blue;
     }
 
-    public function equals($obj1, $obj2)
+    public function equals(object $obj1, object $obj2): bool
     {
         if($obj1 == $obj2 ){
             return true;
@@ -69,12 +60,12 @@ class ValueObject
         return false;
     }
 
-    public static function random()
+    public static function random(): object
     {
         return new ValueObject(rand(0, 255), rand(0, 255), rand(0,255));
     }
 
-    public function mix($objectNumber)
+    public function mix(object $objectNumber): array
     {
         return [
             ($this->red + $objectNumber->red) / 2,
@@ -84,7 +75,7 @@ class ValueObject
     }
 }
 
-$obj1 = new ValueObject(-1,30,50);
+$obj1 = new ValueObject(1,30,50);
 $obj2 = new ValueObject(100,30,100);
 echo 'Equals ';
 var_dump($obj1->equals($obj1, $obj2));

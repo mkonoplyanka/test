@@ -13,6 +13,13 @@ class ValueObject
         $this->setBlue($blue);
     }
 
+    private function validate($value)
+    {
+        if (($value > 255) || ($value < 0)){
+            throw new InvalidArgumentException('Incorrect range');
+        }
+    }
+
     public function getRed()
     {
         return $this->red;
@@ -20,9 +27,7 @@ class ValueObject
 
     private function setRed($red)
     {
-        if(($red > 255) || ($red < 0)){
-            throw new Exception('message');
-        }
+        $this->validate($red);
         $this->red = $red;
     }
 
@@ -33,9 +38,7 @@ class ValueObject
 
     private function setGreen($green)
     {
-        if(($green > 255) || ($green < 0)){
-            throw new Exception('message');
-        }
+        $this->validate($green);
         $this->green = $green;
     }
 
@@ -46,9 +49,7 @@ class ValueObject
 
     private function setBlue($blue)
     {
-        if(($blue > 255) || ($blue < 0)){
-            throw new Exception('message');
-        }
+        $this->validate($blue);
         $this->blue = $blue;
     }
 

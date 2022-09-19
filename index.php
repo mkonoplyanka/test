@@ -52,7 +52,7 @@ class ValueObject
         $this->blue = $blue;
     }
 
-    public function equals(object $obj1, object $obj2): bool
+    public function equals(ValueObject $obj1, ValueObject $obj2): bool
     {
         if($obj1 == $obj2 ){
             return true;
@@ -65,7 +65,7 @@ class ValueObject
         return new ValueObject(rand(0, 255), rand(0, 255), rand(0,255));
     }
 
-    public function mix(object $objectNumber): array
+    public function mix(ValueObject $objectNumber): array
     {
         return [
             ($this->red + $objectNumber->red) / 2,
@@ -75,7 +75,7 @@ class ValueObject
     }
 }
 
-$obj1 = new ValueObject(1,30,50);
+$obj1 = new ValueObject(100,30,100);
 $obj2 = new ValueObject(100,30,100);
 echo 'Equals ';
 var_dump($obj1->equals($obj1, $obj2));

@@ -68,9 +68,11 @@ class ValueObject
 
     public function mix(ValueObject $objectNumber): ValueObject
     {
-        return new ValueObject(($this->red + $objectNumber->red) / 2,
-                             ($this->green + $objectNumber->green) / 2,
-                              ($this->blue + $objectNumber->blue) / 2, );
+        return new ValueObject(
+            ($this->red + $objectNumber->red) / 2,
+            ($this->green + $objectNumber->green) / 2,
+            ($this->blue + $objectNumber->blue) / 2,
+        );
     }
 }
 

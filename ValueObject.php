@@ -66,18 +66,16 @@ class ValueObject
         return new ValueObject(rand(0, 255), rand(0, 255), rand(0,255));
     }
 
-    public function mix(ValueObject $objectNumber): array
+    public function mix(ValueObject $objectNumber): ValueObject
     {
-        return [
-            ($this->red + $objectNumber->red) / 2,
-            ($this->green + $objectNumber->green) / 2,
-            ($this->blue + $objectNumber->blue) /2
-        ];
+        return new ValueObject(($this->red + $objectNumber->red) / 2,
+                             ($this->green + $objectNumber->green) / 2,
+                              ($this->blue + $objectNumber->blue) / 2, );
     }
 }
 
 $obj1 = new ValueObject(100,30,100);
-$obj2 = new ValueObject(100,30,100);
+$obj2 = new ValueObject(100,50,100);
 echo 'Equals ';
 var_dump($obj1->equals($obj1, $obj2));
 echo "<br>";

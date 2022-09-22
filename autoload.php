@@ -140,3 +140,8 @@ class Psr4AutoloaderClass
         return false;
     }
 }
+
+$object = new Psr4AutoloaderClass();
+$object->addNamespace('Test', 'src');
+$object->register();
+

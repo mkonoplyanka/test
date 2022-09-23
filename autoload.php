@@ -142,6 +142,6 @@ class Psr4AutoloaderClass
 }
 
 $object = new Psr4AutoloaderClass();
-$object->addNamespace('Test', 'src');
+$object->addNamespace('Test\\', 'src');
 $object->register();
 

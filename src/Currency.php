@@ -7,6 +7,18 @@ use http\Exception\InvalidArgumentException;
 class Currency
 {
     private $isoCode;
+    const currencyList =
+            [
+            'USD',
+            'EUR',
+            'UAH',
+            'JPY',
+            'GPB',
+            'PLN',
+            'HUF',
+            'CZK',
+            'TRY'
+            ];
 
     public function __construct(string $isoCode)
     {
@@ -20,19 +32,7 @@ class Currency
 
     private function validate(string $value)
     {
-        $currencyList =
-            [
-                'USD',
-                'EUR',
-                'UAH',
-                'JPY',
-                'GPB',
-                'PLN',
-                'HUF',
-                'CZK',
-                'TRY'
-            ];
-        if(!in_array($value, $currencyList)) {
+        if(!in_array($value, Currency::currencyList)) {
             throw new InvalidArgumentException('Incorrect currency format. ');
         }
     }

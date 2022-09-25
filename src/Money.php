@@ -9,7 +9,7 @@ class Money
     private $amount;
     private $currency;
 
-    public function __construct($amount, $currency)
+    public function __construct($amount,Currency $currency)
     {
         $this->setAmount($amount);
         $this->setCurrency($currency);
@@ -28,24 +28,8 @@ class Money
         return $this->amount;
     }
 
-    private function setCurrency($currency)
+    private function setCurrency(Currency $currency)
     {
-        $currencyList =
-            [
-                'USD',
-                'EUR',
-                'UAH',
-                'JPY',
-                'GPB',
-                'PLN',
-                'HUF',
-                'CZK',
-                'TRY'
-            ];
-        if (!in_array($currency, $currencyList)) {
-            throw new InvalidArgumentException('Incorrect currency format. ');
-        }
-
         $this->currency = $currency;
     }
 
@@ -64,10 +48,10 @@ class Money
 
     public function add(Money $obj2)
     {
-        if($this->currency !== $obj2->currency) {
-            throw new InvalidArgumentException('Both currency must be equals');
+        if($this->currency == $obj2->currency) {
+            return new Money($this->amount + $obj2->amount, $this->currency);
         }
 
-        return new Money($this->amount + $obj2->amount, $this->currency);
+        throw new InvalidArgumentException('Both currency must be equals');
     }
 }

@@ -6,6 +6,7 @@ use Test\User;
 use Test\Model;
 
 $user = new User;
+$user->id = 1;
 $user->name = 'John';
 $user->email = 'some@gmail.com';
 $result = $user->save();

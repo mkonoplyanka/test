@@ -29,12 +29,12 @@ namespace Test;
      {
          $data = get_object_vars($this);
          $property = array_keys($data);
-         $prop2 = array_map(function ($item) {
+         $bindProperty = array_map(function ($item) {
              return ':' . $item;
          }, $property);
          $tableName = static::tableName();
-         $sql = 'UPDATE ' . $tableName . ' SET name = ' . $prop2[1] . ', email = ' . $prop2[2] .
-                ' WHERE id = ' .  $prop2[0] . '';
+         $sql = 'UPDATE ' . $tableName . ' SET name = ' . $bindProperty[1] . ', email = ' . $bindProperty[2] .
+                ' WHERE id = ' .  $bindProperty[0] . '';
          return $sql;
      }
 

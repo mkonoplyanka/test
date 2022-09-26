@@ -7,8 +7,8 @@ use Test\Model;
 class User extends Model
 {
     public $id;
-    public $name = 'name';
-    public $email = 'email';
+    public $name;
+    public $email;
 
     public static function tableName()
     {

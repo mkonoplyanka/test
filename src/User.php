@@ -14,16 +14,4 @@ class User extends Model
     {
         return 'user';
     }
-
-    public function save()
-    {
-        $id = $this->id;
-
-        if($id == NULL) {
-            $obj = new User();
-            return $obj->create();
-        }
-        $obj = new User();
-        return $obj->update();
-    }
 }

@@ -44,5 +44,16 @@ namespace Test;
          $sql = 'DELETE * FROM ' . $tableName . ' WHERE id = :id';
          return $sql;
      }
+
+     public function save()
+     {
+         $id = $this->id;
+
+         if($id == NULL) {
+             return $this->create();
+         } else {
+             return $this->update();
+         }
+     }
  }
 

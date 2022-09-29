@@ -1,0 +1,20 @@
+{
+    "name": "hillel/test",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hillel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "michael"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/database": "10.x-dev",
+        "illuminate/events": "10.x-dev"
+    }
+}

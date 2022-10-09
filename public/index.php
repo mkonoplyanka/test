@@ -7,10 +7,5 @@ use Hillel\Hw6\Models\Post;
 use Hillel\Hw6\Models\Tag;
 
 $post = Post::find(5);
-
-$post->title = 'Post title CHANGED';
-$post->slug = 'Post slug CHANGED';
-$post->body = 'Lorem ipsum ...';
-$post->category_id = 4;
-$post->save();
+$post->delete();
 

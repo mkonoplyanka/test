@@ -6,11 +6,11 @@ use Hillel\Hw6\Models\Category;
 use Hillel\Hw6\Models\Post;
 use Hillel\Hw6\Models\Tag;
 
-$post = new Post();
+$post = Post::find(5);
 
-$post->title = 'Post title';
-$post->slug = 'Post slug';
+$post->title = 'Post title CHANGED';
+$post->slug = 'Post slug CHANGED';
 $post->body = 'Lorem ipsum ...';
-$post->category_id = 1;
+$post->category_id = 4;
 $post->save();
-//x10
+

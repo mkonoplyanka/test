@@ -5,13 +5,13 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'User',
+    'host' => '127.0.0.1',
+    'database' => 'test',
     'username' => 'root',
     'password' => 'root',
     'charset' => 'utf8',
     'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
+    'prefix' => ''
 ]);
 
 // Set the event dispatcher used by Eloquent models... (optional)

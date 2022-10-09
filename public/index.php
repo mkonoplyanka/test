@@ -6,11 +6,7 @@ use Hillel\Hw6\Models\Category;
 use Hillel\Hw6\Models\Post;
 use Hillel\Hw6\Models\Tag;
 
-//$cat = new Category();
+$cat = Category::find(1);
 
-//$cat->title = 'Top of the richest people 2022';
-//$cat->slug = 'What is \'slug\' ?';
-//$cat->save();
-
-//$cat = Category::find();
-//$cat->delete();
+$cat->title = 'Changed title';
+$cat->save();

@@ -1,0 +1,20 @@
+{
+    "name": "hillel/hw6",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hillel\\Hw6\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mike"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/database": "^8.83",
+        "illuminate/events": "^8.83"
+    }
+}

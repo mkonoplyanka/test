@@ -1,12 +1,16 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/database.php';
-require_once  __DIR__ . '/../src/Models/User.php';
 
-use Hillel\Models\User;
+use Hillel\Hw6\Models\Category;
+use Hillel\Hw6\Models\Post;
+use Hillel\Hw6\Models\Tag;
 
-$users = User::find(6);
-$users->delete();
-//echo '<pre>';
-//print_r($users);
-//echo '<pre>';
+//$cat = new Category();
+
+//$cat->title = 'Top of the richest people 2022';
+//$cat->slug = 'What is \'slug\' ?';
+//$cat->save();
+
+//$cat = Category::find();
+//$cat->delete();

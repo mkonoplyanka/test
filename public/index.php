@@ -6,7 +6,6 @@ use Hillel\Hw6\Models\Category;
 use Hillel\Hw6\Models\Post;
 use Hillel\Hw6\Models\Tag;
 
-$cat = Category::find(1);
+$cat = Category::find(5);
 
-$cat->title = 'Changed title';
-$cat->save();
+$cat->delete();

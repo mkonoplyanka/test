@@ -1,6 +1,6 @@
 <?php
 
-namespace Hillel\Hw6\Models;
+namespace Hillel\Test\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

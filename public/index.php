@@ -2,9 +2,9 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/database.php';
 
-use Hillel\Hw6\Models\Category;
-use Hillel\Hw6\Models\Post;
-use Hillel\Hw6\Models\Tag;
+use Hillel\Test\Models\Category;
+use Hillel\Test\Models\Post;
+use Hillel\Test\Models\Tag;
 
 //1. Створити 5 категорій (insert)
 
@@ -217,4 +217,3 @@ $tags = Tag::find([4, 7, 3]);
 foreach ($posts as $post) {
     $post->tags()->attach($tags);
 }
-

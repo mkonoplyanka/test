@@ -13,7 +13,6 @@ if (!isset($_GET['id'])) {
 $category = Category::find($_GET['id']);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $category = Category::find($_POST['id']);
     $category->title = $_POST['title'];
     $category->slug = $_POST['slug'];
     $category->save();

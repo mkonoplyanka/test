@@ -13,7 +13,6 @@ if(!isset($_GET['id'])) {
 $tag = Tag::find($_GET['id']);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $tag = Tag::find($_POST['id']);
     $tag->title = $_POST['title'];
     $tag->slug = $_POST['slug'];
     $tag->save();

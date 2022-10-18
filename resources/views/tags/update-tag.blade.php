@@ -4,7 +4,6 @@
 
 @section('content')
     <form method="POST">
-        <input type="hidden" value="{{ $tag->id }}" name="id">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{ $tag->title }}">

@@ -3,6 +3,7 @@
 @section('title', 'List of tags')
 
 @section('content')
+    <a href="/"></a>
     <table class="table">
         <thead>
         <tr>
@@ -32,4 +33,5 @@
         @endforelse
         </tbody>
     </table>
+    <a href="/public/tags/create-tag.php" class="btn btn-primary">Add new tag</a>
 @endsection

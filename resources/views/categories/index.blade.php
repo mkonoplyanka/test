@@ -37,4 +37,5 @@
         @endforelse
         </tbody>
     </table>
+    <a href="/public/categories/create-category.php" class="btn btn-primary">Add new category</a>
 @endsection

@@ -11,4 +11,4 @@ if(!isset($_GET['id'])) {
 }
 
 $delete = Category::find($_GET['id'])->delete();
-header('Location: /public/categories/list-categories.php' );
+header('Location: /public/categories/index.php' );

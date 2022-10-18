@@ -11,4 +11,4 @@ if (!isset($_GET['id'])) {
 }
 
 $delete = Tag::find($_GET['id'])->delete();
-header('Location: /public/tags/list-tags.php');
+header('Location: /public/tags/index.php');

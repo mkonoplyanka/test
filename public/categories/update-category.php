@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category->title = $_POST['title'];
     $category->slug = $_POST['slug'];
     $category->save();
-    header('Location: /public/categories/list-categories.php');
+    header('Location: /public/categories/index.php');
 }
 
 /** @var $blade */

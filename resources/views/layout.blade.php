@@ -13,10 +13,10 @@
         <div class="col">
             <ul>
                 <li>
-                    <a href="/public/categories/list-categories.php">List of categories</a>
+                    <a href="/public/categories/index.php">List of categories</a>
                 </li>
                 <li>
-                    <a href="/public/tags/list-tags.php">List of tags</a>
+                    <a href="/public/tags/index.php">List of tags</a>
                 </li>
             </ul>
         </div>

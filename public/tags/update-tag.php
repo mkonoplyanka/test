@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tag->title = $_POST['title'];
     $tag->slug = $_POST['slug'];
     $tag->save();
-    header('Location: /public/tags/list-tags.php');
+    header('Location: /public/tags/index.php');
 }
 
 /** @var $blade */

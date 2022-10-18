@@ -9,4 +9,4 @@ use Hillel\Test\Models\Category;
 $categories = Category::all();
 
 /** @var $blade */
-echo $blade->make('categories/list-categories', compact('categories'))->render();
+echo $blade->make('categories/index', compact('categories'))->render();

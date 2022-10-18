@@ -9,4 +9,4 @@ use Hillel\Test\Models\Tag;
 $tags = Tag::all();
 
 /** @var $blade */
-echo $blade->make('tags/list-tags', compact('tags'))->render();
+echo $blade->make('tags/index', compact('tags'))->render();

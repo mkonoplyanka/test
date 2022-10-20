@@ -12,7 +12,7 @@
             <th scope="col">Slug</th>
             <th scope="col">Created at</th>
             <th scope="col">Updated at</th>
-            <th scope="col">To change</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -24,8 +24,9 @@
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td>
-                    <a href="/public/tags/update-tag.php?id={{ $tag->id }}" class="btn btn-primary">Update tag</a>
-                    <a href="/public/tags/delete-tag.php?id={{ $tag->id }}" class="btn btn-danger">Delete tag</a>
+                    <a href="/tag/{{ $tag->id }}/edit" class="btn btn-primary">Update tag</a>
+                    <a href="/tag/{{ $tag->id }}/delete" class="btn btn-danger">Delete tag</a>
+                    <a href="/tag/{{$tag->id}}/show" class="btn btn-info">Show</a>
                 </td>
             </tr>
         @empty
@@ -33,5 +34,5 @@
         @endforelse
         </tbody>
     </table>
-    <a href="/public/tags/create-tag.php" class="btn btn-primary">Add new tag</a>
+    <a href="/tag/create" class="btn btn-primary">Add new tag</a>
 @endsection

@@ -3,7 +3,8 @@
 @section('title', 'Update category')
 
 @section('content')
-    <form method="POST">
+    <form action="'/category/update" method="POST">
+        <input type="hidden" name="id" value="{{ $category->id }}">
         <div class="mb-3">
             <label for="title" class="form-label">New title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{ $category->title }}">

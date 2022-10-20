@@ -3,7 +3,8 @@
 @section('title', 'Update-tag')
 
 @section('content')
-    <form method="POST">
+    <form action="/tag/update" method="POST">
+        <input type="hidden" name="id" value="{{ $tag->id }}">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{ $tag->title }}">

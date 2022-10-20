@@ -11,7 +11,7 @@
                 <th scope="col">Slug</th>
                 <th scope="col">Created at</th>
                 <th scope="col">Updated at</th>
-                <th scope="col">To change</th>
+                <th scope="col">Action</th>
 
             </tr>
         </thead>
@@ -24,12 +24,9 @@
                 <td>{{ $category->created_at }}</td>
                 <td>{{ $category->updated_at }}</td>
                 <td>
-                    <a href="/public/categories/update-category.php?id={{ $category->id }}" class="btn btn-primary">
-                        Update category
-                    </a>
-                    <a href="/public/categories/delete-category.php?id={{ $category->id }}" class="btn btn-danger">
-                        Delete category
-                    </a>
+                    <a href="/category/{{ $category->id }}/edit" class="btn btn-primary">Update category</a>
+                    <a href="/category/{{ $category->id }}/delete" class="btn btn-danger">Delete category</a>
+                    <a href="/category/{{ $category->id }}/show" class="btn btn-info">Show</a>
                 </td>
             </tr>
             @empty
@@ -37,5 +34,5 @@
         @endforelse
         </tbody>
     </table>
-    <a href="/public/categories/create-category.php" class="btn btn-primary">Add new category</a>
+    <a href="/category/create" class="btn btn-primary">Add new category</a>
 @endsection

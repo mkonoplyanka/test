@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'List of tags')
+@section('title', 'List of tag')
 
 @section('content')
     <a href="/"></a>

@@ -16,6 +16,7 @@
     "require": {
         "illuminate/database": "10.x-dev",
         "illuminate/view": "10.x-dev",
-        "illuminate/events": "10.x-dev"
+        "illuminate/events": "10.x-dev",
+        "illuminate/routing": "10.x-dev"
     }
 }

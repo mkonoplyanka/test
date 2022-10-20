@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'List of categories')
+@section('title', 'List of category')
 
 @section('content')
     <table class="table">

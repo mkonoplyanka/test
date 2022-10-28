@@ -1,8 +1,16 @@
 @extends('layout')
 
-@section('title', 'List of category')
+@section('title', 'List of posts')
 
 @section('content')
+    @isset($_SESSION['success'])
+        <div class="alert alert-success" role="alert">
+            {{ $_SESSION['success'] }}
+        </div>
+    @endisset
+    @php
+        unset($_SESSION['success'])
+    @endphp
     <table class="table">
         <thead>
             <tr>

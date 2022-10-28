@@ -3,6 +3,14 @@
 @section('title', 'List of tag')
 
 @section('content')
+    @isset($_SESSION['success'])
+        <div class="alert alert-success" role="alert">
+            {{ $_SESSION['success'] }}
+        </div>
+    @endisset
+    @php
+        unset($_SESSION['success'])
+    @endphp
     <a href="/"></a>
     <table class="table">
         <thead>
@@ -10,6 +18,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Slug</th>
+            <th scope="col">Posts</th>
             <th scope="col">Created at</th>
             <th scope="col">Updated at</th>
             <th scope="col">Action</th>
@@ -21,6 +30,7 @@
                 <th scope="row">{{ $tag->id }}</th>
                 <td>{{ $tag->title }}</td>
                 <td>{{ $tag->slug }}</td>
+                <td>{{ $tag->posts->pluck('title')->join(', ') }}</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td>

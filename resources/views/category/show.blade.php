@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Data about your category')
+@section('title', 'Data about your post')
 
 @section('content')
     <h1>{{ $category->title }}</h1>

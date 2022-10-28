@@ -18,6 +18,9 @@
                 <li>
                     <a href="/tag">List of tags</a>
                 </li>
+                <li>
+                    <a href="/post">List of posts</a>
+                </li>
             </ul>
         </div>
     </div>

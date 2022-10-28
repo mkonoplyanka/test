@@ -17,6 +17,8 @@
         "illuminate/database": "10.x-dev",
         "illuminate/view": "10.x-dev",
         "illuminate/events": "10.x-dev",
-        "illuminate/routing": "10.x-dev"
+        "illuminate/routing": "10.x-dev",
+        "illuminate/validation": "10.x-dev",
+        "vlucas/phpdotenv": "5.5.x-dev"
     }
 }

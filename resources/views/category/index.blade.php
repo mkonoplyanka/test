@@ -43,4 +43,5 @@
         </tbody>
     </table>
     <a href="/category/create" class="btn btn-primary">Add new category</a>
+    <a href="/category/trash" class="btn btn-info">Trash</a>
 @endsection

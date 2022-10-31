@@ -36,9 +36,8 @@
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
                 <td>
-                    <a href="/post/{{ $post->id }}/edit" class="btn btn-primary">Update post</a>
-                    <a href="/post/{{ $post->id }}/delete" class="btn btn-danger">Delete post</a>
-                    <a href="/post/{{ $post->id }}/show" class="btn btn-info">Show</a>
+                    <a href="/post/{{ $post->id }}/restore" class="btn btn-primary">Restore</a>
+                    <a href="/post/{{ $post->id }}/force-delete" class="btn btn-danger">Delete from trash</a>
                 </td>
             </tr>
         @empty
@@ -46,6 +45,5 @@
         @endforelse
         </tbody>
     </table>
-    <a href="/post/create" class="btn btn-primary">Add new post</a>
-    <a href="/post/trash" class="btn btn-info">Trash</a>
+    <a href="/post/" class="btn btn-info">List</a>
 @endsection

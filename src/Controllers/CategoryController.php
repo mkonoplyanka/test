@@ -3,7 +3,6 @@
 namespace Hillel\Test\Controllers;
 
 use Hillel\Test\Models\Category;
-use Hillel\Test\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\Rule;
 
@@ -14,6 +13,12 @@ class CategoryController
         $categories = Category::all();
         return view('category/index', compact('categories'));
     }
+    public function trash()
+    {
+        $categories = Category::onlyTrashed()->get();
+        return view('category/trash', compact('categories'));
+    }
+
     public function show($id)
     {
         $category = Category::find($id);
@@ -94,8 +99,30 @@ class CategoryController
     public function destroy($id)
     {
         $category = Category::find($id);
-        $category->posts()->delete();
         $category->delete();
         return new RedirectResponse('/category');
+    }
+
+    public function restore($id)
+    {
+        Category::withTrashed()
+            ->where('id', $id)
+            ->restore();
+
+        $_SESSION['success'] = 'Entry restored successfully';
+        return new RedirectResponse('/category/trash');
+    }
+
+    public function forceDelete($id)
+    {
+        Category::withTrashed()
+            ->where('id', $id)
+            ->restore();
+        $category = Category::find($id);
+        $category->posts()->delete();
+        $category->delete();
+
+        $_SESSION['success'] = 'Entry deleted successfully';
+        return new RedirectResponse('/category/trash');
     }
 }

@@ -14,6 +14,11 @@ class TagController
         $tags = Tag::all();
         return view('tag/index', compact('tags'));
     }
+    public function trash()
+    {
+        $tags = Tag::onlyTrashed()->get();
+        return view('tag/trash', compact('tags'));
+    }
     public function show($id)
     {
         $tag = Tag::find($id);
@@ -93,10 +98,32 @@ class TagController
     public function destroy($id)
     {
         $tag = Tag::find($id);
-        $tag->posts()->detach();
         $tag->delete();
 
         $_SESSION['success'] = 'Entry deleted successfully';
         return new RedirectResponse('/tag');
+    }
+
+    public function restore($id)
+    {
+        Tag::withTrashed()
+            ->where('id', $id)
+            ->restore();
+
+        $_SESSION['success'] = 'Entry restored successfully';
+        return new RedirectResponse('/tag/trash');
+    }
+
+    public function forceDelete($id)
+    {
+        Tag::withTrashed()
+            ->where('id', $id)
+            ->restore();
+        $tag = Tag::find($id);
+        $tag->posts()->detach();
+        $tag->forceDelete();
+
+        $_SESSION['success'] = 'Entry deleted successfully';
+        return new RedirectResponse('/tag/trash');
     }
 }

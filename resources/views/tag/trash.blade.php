@@ -34,9 +34,8 @@
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td>
-                    <a href="/tag/{{ $tag->id }}/edit" class="btn btn-primary">Update tag</a>
-                    <a href="/tag/{{ $tag->id }}/delete" class="btn btn-danger">Delete tag</a>
-                    <a href="/tag/{{$tag->id}}/show" class="btn btn-info">Show</a>
+                    <a href="/tag/{{ $tag->id }}/restore" class="btn btn-primary">Restore</a>
+                    <a href="/tag/{{ $tag->id }}/force-delete" class="btn btn-danger">Delete from trash</a>
                 </td>
             </tr>
         @empty
@@ -44,6 +43,5 @@
         @endforelse
         </tbody>
     </table>
-    <a href="/tag/create" class="btn btn-primary">Add new tag</a>
-    <a href="/tag/trash" class="btn btn-info">Trash</a>
+    <a href="/tag/" class="btn btn-primary">Tags list</a>
 @endsection
